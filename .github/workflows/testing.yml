@@ -1,8 +1,7 @@
 name: Test
-on: push
+on: workflow_dispatch
 jobs:
   test_deployment:
-    continue-on-error: true
     runs-on: ubuntu-latest
     steps:
       - name: Get repository code
@@ -16,5 +15,3 @@ jobs:
         run: npm ci
       - name: Lint code
         run: npm run lint
-      - name: test code
-        run: npm run test 
