@@ -11,4 +11,4 @@ jobs:
       - name: Test app
         run: npm run test
       - name: Use checks
-        run: npm use lint
+        run: npm run lint
