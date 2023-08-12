@@ -13,8 +13,8 @@ jobs:
           path: ~/.npm
           key: projects_cache${{ hashFiles('**/package-lock.json') }}
       - name: Install deps
-        run: npm install
-      - name: Test app
-        run: npm run test
+        run: npm ci
       - name: Lint code
         run: npm run lint
+      - name: test code
+        run: npm run test 
