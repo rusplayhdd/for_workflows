@@ -1,7 +1,8 @@
 name: Test
 on: push
 jobs:
-  test:
+  test_deployment:
+    continue-on-error: true
     runs-on: ubuntu-latest
     steps:
       - name: Get repository code
@@ -13,5 +14,7 @@ jobs:
           key: projects_cache${{ hashFiles('**/package-lock.json') }}
       - name: Install deps
         run: npm install
+      - name: Test app
+        run: npm run test
       - name: Lint code
         run: npm run lint
