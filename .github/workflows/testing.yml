@@ -7,8 +7,15 @@ jobs:
       - name: Get repository code
         uses: actions/checkout@v3
       - name: Install deps
-        run: npm ci
+        run: npm install
       - name: Test app
         run: npm run test
-      - name: Use checks
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get repository code
+        uses: actions/checkout@v3
+      - name: Install deps
+        run: npm install
+      - name: Lint code
         run: npm run lint
